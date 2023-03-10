@@ -27,7 +27,7 @@ app.post("/", limiter, async (req, res) => {
   try {
     if (req.files && req.files.files) {
       [req.files.files].flat().map((file) => {
-        file.mv("./uploads/" + file.name);
+        return file.mv("./uploads/" + file.name);
       });
     }
 
@@ -42,6 +42,6 @@ app.post("/", limiter, async (req, res) => {
   }
 });
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3001;
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));

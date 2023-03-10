@@ -49,7 +49,7 @@ export const Result = () => {
       formData.append(entry[0], entry[1]);
     });
 
-    const res = await fetch(`http://localhost:4000/`, {
+    const res = await fetch(`http://localhost:3001/`, {
       method: 'POST',
       body: formData,
     });
